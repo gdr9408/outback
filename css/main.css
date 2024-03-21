@@ -1,0 +1,500 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/akrobat');
+:root{
+  --main-color:#C30606;
+  --point-color:#907354;
+}
+
+body {
+  font-family: 'Noto Sans KR','맑은 고딕','Margun Gothic', sans-serif;
+}
+.inner {
+  width: 1180px;
+  margin: auto;
+  position: relative;
+}
+ul:after,.inner:after, ol:after {      /*부모가 감싸줄때 사용*/
+  display: block;
+  content: "";
+  clear: both;
+}
+/*---------------헤더--------------*/
+
+header {
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index:100;
+  height: 100px;
+  width: 100%;
+  background:#343436;
+
+}
+header h1 {
+  position: absolute;
+  left: 0;
+  top: 28px;
+}
+header h1 a {
+  display: block;
+  width: 118px; 
+  height: 44px;
+  background: url(../img/logo_white_type_02.png);
+  font-size: 0;
+}
+#gnb {
+  padding-left:200px;
+}
+
+#gnb > ul > li {
+  float:left;
+  margin: 0 15px;
+}
+#gnb > ul > li > a {
+  color:#fff;
+  line-height: 100px;
+  font-family: 'Akrobat ExtraBold', sans-serif;
+  letter-spacing: 2px; /*B R A N>!!여기!!<D  사이 공백*/
+  font-size: 19px;
+  display: block;
+  position: relative;
+  /*font: 600 19px/100px 'Akrobat ExtraBold', sans-serif;
+  축약형  f-w f-s  line-height     font*/
+  
+}
+
+/* #gnb > ul > li > a:after {
+  content:"";
+  width: 0;
+  height:3px;
+  background:var(--main-color);
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 0.3s;
+}
+#gnb > ul > li:hover > a:after {
+  width: 100%;
+} */
+
+.bar {
+  position: absolute;
+  top: 70px;
+  background:var(--main-color);
+  width: 0;
+  height: 3px;
+  transition: 0.5s ease-out;
+}
+#gnb > ul > li:hover .sub {
+  opacity: 100%;
+  visibility:visible;
+  /* visibility
+  -display와 다른점 -영역을 차지하고 있음, transition 적용됨 
+  -opacity와 다른점-a작동등 엘리먼트가 작동안함*/
+}
+.sub {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  padding-top: 30px;
+  transition: 0.5s ease-out;
+  margin-left: -20px;
+}
+.sub > li {
+margin: 15px;
+}
+.sub > li> a {
+  color: #fff;
+  font-size: 15px;
+}
+.global-menu {
+  position: absolute;
+  right: 0;
+  top: 38px;
+}
+.global-menu li {
+  float: left;
+  margin-left: 20px;
+}
+.global-menu a {
+  color:#999;
+  font-size: 14px;
+}
+li.join {}
+.join a {
+  background: #666;
+  color:#fff;
+  padding: 4px 18px;
+}
+
+
+
+
+#main-banner {
+  width: 100%;
+  min-width: 1180px;
+  height: 700px;
+  overflow: hidden;   /*밑에 스크롤 안생기게 해줌 */
+  margin-top: 100px;
+}
+#main-banner .slider{
+  position: relative;
+  left:50%;
+  transform: translate(-50%);
+  width: 1920px;
+}
+/*==============main======================*/
+.main-product {
+  padding: 150px 0 100px;
+}
+.main-product > div.inner:after {}
+.product-img {
+  width: 310px;
+  padding-top: 100px;
+}
+.product-link {
+  float: right;
+}
+.product-text {
+  position: absolute;
+  top:100px;
+  left: 400px;
+  width:400px;
+}
+
+.en-name {
+  font: 600 85px / 1.1 'Akrobat ExtraBold', sans-serif;
+}
+.ko-name {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 5px 0 35px;
+}
+.info {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+
+.benefit {
+  text-align: center;
+}
+.benefit-tomato {
+  width:375px;
+  height: 442px;
+  margin: -170px 0 0 150px;
+  background: url('../img/main_benefit_obj_01.jpg');
+}
+.benefit-contents{
+  height: 520px;
+  background: url('../img/main_benefit_visual.jpg');
+  margin-top: -145px;
+  color:white;
+}
+.benefit-contents h3 {
+  font: 600 55px 'Akrobat ExtraBold', sans-serif;
+  letter-spacing: 2.5px;
+  padding: 90px 0 8px;
+}
+.benefit-contents .h3-info {
+  opacity: 0.7;
+}
+
+.benefit ul {
+  padding: 70px 45px 0;
+}
+.benefit li {
+  float: left;
+  width: 33.3%;
+}
+
+.benefit li a {}
+.benefit span {
+  display: block;
+}
+.benefit .icon {}
+.benefit .icon-name {
+  font: 600 28px 'Akrobat ExtraBold', sans-serif;
+  margin-top: 30px;
+}
+.benefit .icon-info {
+  opacity: 0.7;
+  font-size: 14px;
+  margin-top: 13px;
+  line-height: 1.5;
+}
+.reward {
+  margin-top: 70px;
+  padding-left: 350px;
+  box-sizing: border-box;
+}
+.reward-title {
+  border:5px solid black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 260px;
+}
+.txt-data {
+  width: 230px;
+  height: 260px;
+  background:#fff;
+  margin: -15px 0 0 -5px;
+}
+
+.txt-data h3 {
+  font: 700 35px 'Akrobat ExtraBold', sans-serif;
+  letter-spacing: 2px;
+}
+.txt-data h3 em {
+  font-size: 55px;
+}
+.txt-data .info {
+  padding: 18px 0;
+  font-weight: 400;
+  opacity: 0.9;
+}
+.txt-data .btn-more a {
+  display: block;
+  width: 100px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  background: #222222;
+  color: #fff;
+  font-size: 14px;
+}
+
+.reward ol {}
+.reward ol li {
+  float: left;
+  width: 33.33%;
+  margin-bottom: 50px;
+
+}
+.reward ol li em {
+  color:#96603d;
+  opacity: 0.4;
+}
+.reward .reward-name {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.reward .reward-info {
+  margin-top: 10px;
+  color:#666;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 450;
+}
+
+
+.big-menu {
+  padding: 90px 0 50px;
+}
+.big-menu-list {}
+.big-menu-list li {
+  float: left;
+  width: 33.33%;
+  height: 160px;
+  position: relative;
+}
+.big-menu-list li:nth-child(1) {
+  background:#907354;
+}
+.big-menu-list li:nth-child(2) {
+  background:#434343;
+}
+.big-menu-list li:nth-child(3) {
+  background:#C30606;
+}
+.big-menu-list li a {
+  display: block;
+  padding: 25px;
+  height: 160px;
+  box-sizing: border-box;
+}
+.big-menu .title {
+  font: 700 28px 'Akrobat ExtraBold', sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.big-menu .txt {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.big-menu .arrow {
+  position: absolute;
+  bottom: 35px;
+  width: 40px;
+  height: 10px;
+  border-bottom: 1px solid white;
+  transition: 0.3s ease-in;
+}
+.big-menu .arrow:after {
+  position: absolute;
+  content: "";
+  right: 2px;
+  top: 5.4px;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid white;
+  transform: rotate(-45deg);
+}
+.big-menu .icon {
+  position: absolute;
+  top:50px;
+  right:90px;
+  transition: 0.5s;
+}
+.big-menu-list li a:hover .arrow {
+  width:60px;
+}
+.big-menu-list li a:hover .icon {
+  top: 38px;
+} 
+
+
+
+
+.brand {
+  border-top: 1px solid #bbbaba;
+  padding: 20px 0 25px;
+}
+.brand-list {}
+.brand li {
+  box-sizing: border-box;
+  float: left;
+  width: 16.66%;
+  text-align: center;
+  position: relative;
+}
+.brand li:first-child::before {
+  display: none;
+}
+.brand li::before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "";
+  background: #bbbaba;
+  width: 1px;
+  height: 22px;
+  
+}
+.brand-list a{}
+
+
+/* ======푸터================== */
+footer {
+  background:#232323;
+  height: 310px;
+}
+.footer1 {
+  position: relative;
+}
+.footer1-1 {
+  position: absolute;
+  top:40px;
+  left: 0;
+}
+.footer1-1 span {
+  border: 1px solid #4f4f4f;
+  font-size: 12px;
+  color: #8b8b8b;
+  padding: 5px 15px;
+  margin-right: 8px;
+}
+
+
+.footer1-2 {
+  position: absolute;
+  top:30px;
+  right: 0;
+}
+.footer1-2 a {
+  position: relative;
+  padding: 20px 0;
+}
+.footer1-2 span {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+}
+.footer1-2 a:after {
+  width: 1px;
+  height:12px;
+  display: inline-block;
+  content: "";
+  background: #999;
+  margin: 0 8px;
+  opacity: 0.5;
+
+
+}
+.footer1-2 a:last-child:after {
+  display: none;
+}
+
+
+.footer2 {
+  position: relative;
+}
+.footer2-1 {
+  position: absolute;
+  top: 90px;
+  left: 0;
+}
+.footer2-1  span, .footer3 p {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.7;
+
+}
+.footer2-1 p a { 
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid white;
+  line-height: 1px;
+}
+
+.footer2-2 {
+  display: inline-block;
+  position: absolute;
+  top: 90px;
+  right: 0;
+
+}
+.footer2-2 a {
+  margin-left: 7px;
+}
+.footer3 {
+  position: relative;
+}
+.footer3-1 {
+  position: absolute;
+  top: 160px;
+}
+
+.footer3-1 strong {
+  display: inline-block;
+  margin-left:8px ;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  top: -2px;
+}
+.footer3-1 p:nth-child(2){
+  padding: 0 0 3px;
+  opacity: 0.5;
+}
